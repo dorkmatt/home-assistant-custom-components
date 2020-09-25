@@ -1,0 +1,9 @@
+{
+  "domain": "davis_airlink",
+  "name": "Davis AirLink",
+  "documentation": "https://github.com/dorkmatt/home-assistant-custom-components",
+  "codeowners": ["@dorkmatt"],
+  "zeroconf": ["_airlink._tcp.local."],
+  "config_flow": true,
+  "requirements": ["python-aqi==0.6.1"]
+}
