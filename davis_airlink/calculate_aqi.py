@@ -18,12 +18,12 @@ def calculate_aqi(HOST):
     airlink_json_values = response.json()['data']['conditions'][0]
 
     myaqi = aqi.to_aqi([
-        (aqi.POLLUTANT_PM10, airlink_json_values['pm_10_nowcast']),
-        (aqi.POLLUTANT_PM25, airlink_json_values['pm_2p5_nowcast']),
+        (aqi.POLLUTANT_PM10, airlink_json_values['pm_10']),
+        (aqi.POLLUTANT_PM25, airlink_json_values['pm_2p5']),
     ])
 
     print(f"# AirLink Device ID (MAC address): {response.json()['data']['did']}")
-    print(f"AQI is {myaqi} (Raw values pm_10_nowcast: {airlink_json_values['pm_10_nowcast']} pm_2p5_nowcast: {airlink_json_values['pm_2p5_nowcast']})")
+    print(f"AQI is {myaqi} (Raw values pm_10: {airlink_json_values['pm_10']} pm_2p5: {airlink_json_values['pm_2p5']})")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(add_help=False,
